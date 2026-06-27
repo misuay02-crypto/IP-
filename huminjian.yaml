@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "民间专用-198.65.8.75-29D,3H"
+    type: vless
+    server: 64.81.117.215
+    port: 58289
+    uuid: a7f381e7-3bca-4b56-b1af-fc53c4220103
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    flow: xtls-rprx-vision
+    servername: www.sony.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: YtXtGl0nWn6TDGM8r2vpB7Lw8jwaFIMD1WBXJSZKclg
+      short-id: 7fcd77f16557dc
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "民间专用-198.65.8.75-29D,3H"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
