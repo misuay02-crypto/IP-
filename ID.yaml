@@ -1,0 +1,34 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "印尼IP-ID:103.160.54.234-28D,9H⏳"
+    type: vless
+    server: 64.81.117.215
+    port: 46958
+    uuid: "0df83474-b715-4f54-8706-bc41ce8a99c6"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    flow: xtls-rprx-vision
+    packet-encoding: xudp
+    servername: "www.amd.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "e7VEp30QSaiu7zFMhxgihcfXe50FRs-SMgkkMy2l72U"
+      short-id: "5362bfa1"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "印尼IP-ID:103.160.54.234-28D,9H⏳"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
