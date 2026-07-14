@@ -4,11 +4,11 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "测试65.195.39.89-1"
+  - name: "测试65.195.39.89-17D,12H⏳"
     type: vless
     server: 64.81.117.215
     port: 443
-    uuid: "3385eecd-80d2-4cd1-bfb8-5ae4e72bfafc"
+    uuid: "171db8d0-ad89-43f1-8b8b-875042916350"
     encryption: ""
     udp: true
     tls: true
@@ -19,7 +19,7 @@ proxies:
     client-fingerprint: "chrome"
     reality-opts:
       public-key: "5ddNDOoisr3bPULD9IOGDMsH8wifpG32YjNkuIJbslY"
-      short-id: "9e7913485cd8e4"
+      short-id: "2ee7dc67fbc7"
     smux:
       enabled: false
 
@@ -27,7 +27,7 @@ proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
-      - "测试65.195.39.89-1"
+      - "测试65.195.39.89-17D,12H⏳"
       - DIRECT
 
 rules:
