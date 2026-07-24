@@ -1,0 +1,34 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "IP-65.195.36.156-26D⏳"
+    type: vless
+    server: 64.81.117.215
+    port: 443
+    uuid: "2e1a921f-71a4-4a32-86c2-44ec8fc42e58"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    flow: xtls-rprx-vision
+    packet-encoding: xudp
+    servername: "www.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "5ddNDOoisr3bPULD9IOGDMsH8wifpG32YjNkuIJbslY"
+      short-id: "725f78cf4528843c"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "IP-65.195.36.156-26D⏳"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
