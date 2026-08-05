@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "linzk-133.169.0.62"
+    type: vless
+    server: 64.81.117.10
+    port: 443
+    uuid: "193e7227-0505-48bd-bc8f-18d3435b64f5"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "api-prod.nova.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "s4ZUDMof157P_ycimzkZ9_jxieFBRRy02m_8Z2ENRQE"
+      short-id: "f8134b"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "linzk-133.169.0.62"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
