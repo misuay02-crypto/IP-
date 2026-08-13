@@ -1,0 +1,29 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "Verizon"
+    type: vless
+    server: 72.249.207.150
+    port: 55547
+    uuid: "b15acbee-8719-4adb-b205-6a3cf9da7fe4"
+    encryption: ""
+    udp: true
+    tls: false
+    network: tcp
+    packet-encoding: xudp
+    client-fingerprint: "chrome"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Verizon"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
