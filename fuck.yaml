@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "Misuay-198.65.8.149-US"
+    type: vless
+    server: 64.81.117.10
+    port: 443
+    uuid: "65d0791b-90c0-4800-8c15-450eca9ad40e"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "services-cdn.gfestage.nvidia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "s4ZUDMof157P_ycimzkZ9_jxieFBRRy02m_8Z2ENRQE"
+      short-id: "eba70323d8"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Misuay-198.65.8.149-US"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
