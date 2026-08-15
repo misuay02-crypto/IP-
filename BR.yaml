@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "BR-TK1-45.237.59.124"
+    type: vless
+    server: 64.81.117.10
+    port: 443
+    uuid: "56dbc571-7eda-42c5-9e9d-de99dfbde3a7"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "support-shield.nvidia.fi"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "s4ZUDMof157P_ycimzkZ9_jxieFBRRy02m_8Z2ENRQE"
+      short-id: "2e21"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "BR-TK1-45.237.59.124"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
