@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "205.179.217.82-Ne-美国"
+    type: vless
+    server: 179.255.113.235
+    port: 443
+    uuid: "ffa7ac92-bf53-40ed-8b38-555bb8956560"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "p-yo-www-amazon-com-kalias.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "NhhOxoFsyU6mkzRgYsrUtKyhMv_wqPF1IMECkNrBww4"
+      short-id: "a73dae5146ae60"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "205.179.217.82-Ne-美国"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
