@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "198.65.8.185-广东苏科-美国"
+    type: vless
+    server: 179.255.113.235
+    port: 443
+    uuid: "532c6952-626e-41c1-96c2-c3bd51ad3c28"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "www.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "NhhOxoFsyU6mkzRgYsrUtKyhMv_wqPF1IMECkNrBww4"
+      short-id: "b415"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "198.65.8.185-广东苏科-美国"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
