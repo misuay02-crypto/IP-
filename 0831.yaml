@@ -1,0 +1,34 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "服助务手-65.195.38.229"
+    type: vless
+    server: 38.246.228.201
+    port: 443
+    uuid: "c0315d3b-a8e2-43c3-896c-a907e9fa79c1"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    flow: xtls-rprx-vision
+    packet-encoding: xudp
+    servername: "example.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "39iNTLIM9dj4pfNq-vLSU6ZhSn08mV84SQBp-dGFAVA"
+      short-id: "53ce"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "服助务手-65.195.38.229"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
