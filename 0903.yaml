@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "-啾啾啾啾宝-198.65.8.3"
+    type: vless
+    server: 179.253.244.97
+    port: 443
+    uuid: "8ea10692-ede1-4ae9-a9cb-b3f58b95f119"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "jxnZteDbQXiFs1FPGIch6L0lLY1kTIRFiqjnvrImP2M"
+      short-id: "87"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "-啾啾啾啾宝-198.65.8.3"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
