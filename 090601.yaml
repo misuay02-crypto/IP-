@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "移动直播专线-五辉医疗-192.144.112.139"
+    type: vless
+    server: 38.47.118.228
+    port: 443
+    uuid: "e3f1ae0e-85a3-4a7e-b1a8-90f3bf580e6e"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "intel.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "V8vJeOaVFB6UUrnEP_0q-qJdu_tTo7NSL5QmT_V0qVs"
+      short-id: "83"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "移动直播专线-五辉医疗-192.144.112.139"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
