@@ -1,0 +1,33 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "Hu-US-8-65.195.37.79"
+    type: vless
+    server: 38.207.171.75
+    port: 443
+    uuid: "0a707e87-377e-4f38-b2ee-c37a35691736"
+    encryption: ""
+    udp: true
+    tls: true
+    network: tcp
+    packet-encoding: xudp
+    servername: "example.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "G_bw9uKy1NkBRM07vIvxt45jyWS5okRJCSp8BGvjYQU"
+      short-id: "db50"
+    smux:
+      enabled: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - "Hu-US-8-65.195.37.79"
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
