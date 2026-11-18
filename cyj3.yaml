@@ -18,7 +18,7 @@ proxies:
     client-fingerprint: "chrome"
     reality-opts:
       public-key: "G_bw9uKy1NkBRM07vIvxt45jyWS5okRJCSp8BGvjYQU"
-      short-id: "31e8fe455a69"
+      short-id: "35"
     smux:
       enabled: false
 
